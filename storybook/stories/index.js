@@ -7,7 +7,7 @@ import { linkTo } from '@storybook/addon-links';
 import { withKnobs, object, text, number } from '@storybook/addon-knobs';
 
 // eslint-disable-next-line import/extensions
-import SignIn from '../../src/layouts/auth/SignIn';
+import SignIn from '../../src/layouts/Auth/SignIn';
 
 
   storiesOf('Layout', module)

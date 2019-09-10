@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, ImageBackground } from 'react-native';
 import { Button, Layout, Input } from 'react-native-ui-kitten';
-import { Formik } from 'formik';
 
 class Login extends Component {
     constructor(props) {
