@@ -20,7 +20,8 @@ class Login extends Component {
         form,
         validation,
         btnText,
-        option,
+        onPress,
+        option
       } = this.props;
       const Layout = LOGIN_LAYOUT[option - 1] || LOGIN_LAYOUT[0]
 
@@ -30,6 +31,7 @@ class Login extends Component {
       bgUrl={bgUrl}
       btnText={btnText}
       validation={validation}
+      onPress={onPress}
       />
       
     );

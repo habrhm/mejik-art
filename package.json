@@ -11,7 +11,9 @@
   },
   "config": {
     "react-native-storybook-loader": {
-      "searchDir": ["./src"],
+      "searchDir": [
+        "./src"
+      ],
       "pattern": "**/*.stories.js",
       "outputFile": "./storybook/storyLoader.js"
     }
@@ -21,6 +23,7 @@
     "@eva-design/eva": "^1.0.1",
     "@react-native-community/picker": "^1.0.0",
     "emotion-theming": "^10.0.17",
+    "formik": "^1.5.8",
     "prop-types": "^15.7.2",
     "react": "16.8.6",
     "react-native": "0.60.5",

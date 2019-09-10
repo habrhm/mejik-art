@@ -1,64 +1,71 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
-import {Button, Layout, Input} from 'react-native-ui-kitten';
+import { View, Text, ImageBackground } from 'react-native';
+import { Button, Layout, Input } from 'react-native-ui-kitten';
+import { Formik } from 'formik';
 
 class Login extends Component {
-  constructor(props) {
-    super(props);
-    console.log(props.form);
-    this.state = {
-        email  : this.props.form.email,
-        password :this.props.form.password,
-    };
-  }
+    constructor(props) {
+        super(props);
+        console.log(props.form);
+    }
 
-  onEmailInputTextChange = (email) => {
-    this.setState({ email });
-  };
 
-    onPasswordInputTextChange = (password) => {
-    this.setState({ password });
-  };
 
-  render() {
-    const {
-        bgUrl,
-        form,
-        validation,
-        btnText,
-      } = this.props;
-      const {
-          emailPlaceholder,
-          passwordPlaceholder,
-          email,
-          password
-      } = form
-    return (
-      <Layout
-        style={{
-            justifyContent : 'center',
-            alignItems : 'center',
-            flex: 1
-        }}
-      >
+    render() {
+        const {
+            bgUrl,
+            form,
+            validation,
+            btnText,
+            onPress,
+        } = this.props;
+        const {
+            emailPlaceholder,
+            passwordPlaceholder,
+            email,
+            password,
+        } = form
+        return (
 
-          <Input
-            label='EMAIL'
-            placeholder={emailPlaceholder}
-            value={email}
-           // onChangeText={this.onEmailInputTextChange}
-          />
-          <Input
-            label='password'
-            placeholder={passwordPlaceholder}
-            secureTextEntry={true}
-            value={password}
-            //onChangeText={this.onPasswordInputTextChange}
-          />
-          <Button>{btnText}</Button>
-      </Layout>
-    );
-  }
+     
+            <Layout
+                style={{
+                    flex: 1
+                }}
+            >
+
+                <ImageBackground
+                    resizeMode='stretch'
+                    style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}
+                    source={{ uri: bgUrl }}>
+                    <View >
+                    <Input
+                        label='Email'
+                        placeholder={emailPlaceholder}
+                        value={email}
+                        style={{ width: '75%', marginTop: '2%' }}
+                    />
+                    <Input
+                        label='Password'
+                        placeholder={passwordPlaceholder}
+                        secureTextEntry={true}
+                        value={password}
+                        style={{ width: '75%', marginTop: '2%' }}
+                    />
+                    </View>
+                    <Button
+                        onPress={onPress()}
+                        size="giant" style={{ width: '75%', position: 'absolute', bottom: 40 }}
+                    >{btnText}
+                    </Button>
+                    <Text style={{ color: 'white', textAlign: 'center', alignSelf: 'center', bottom: 10, position: 'absolute' }}>Do not have an account ? Register Here</Text>
+
+                </ImageBackground>
+
+            </Layout>
+        );
+    }
 }
 
 export default Login;
+

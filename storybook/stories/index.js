@@ -21,13 +21,16 @@ import Login from '../../src/layouts/auth/login/Login';
         passwordPlaceholder :"Insert Password"
       })
       const btnText = text("Button Text", "Login")
+      const bgUrl = text("Background Image", "https://melaniepfeffer.files.wordpress.com/2012/09/img_05461.jpg")
       
       
       return(
     <Login 
       option={opt}
+      bgUrl={bgUrl}
       form={form}
       btnText={btnText}
+      onPress={() => action("Login")}
     />
   )});
   
