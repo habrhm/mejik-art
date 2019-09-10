@@ -16,27 +16,24 @@ class Login extends Component {
 
   render() {
     const {
-        // bgUrl,
-        // form,
-        // validation,
-        // btnText,
+        bgUrl,
+        form,
+        validation,
+        btnText,
         option,
-        // actions : {
-        // },
       } = this.props;
-      const Layout = LOGIN_LAYOUT[option - 1]
+      const Layout = LOGIN_LAYOUT[option - 1] || LOGIN_LAYOUT[0]
 
     return (
       <Layout
-      {...this.props}
+      form={form}
+      bgUrl={bgUrl}
+      btnText={btnText}
+      validation={validation}
       />
       
     );
   }
 }
 
-
-
-
-  
 export default Login;

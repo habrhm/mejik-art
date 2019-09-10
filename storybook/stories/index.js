@@ -4,23 +4,30 @@ import { Text } from 'react-native';
 import { storiesOf } from '@storybook/react-native';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
+import { withKnobs, object, text, number } from '@storybook/addon-knobs';
 
 // eslint-disable-next-line import/extensions
-import Button from './Button';
-import CenterView from './CenterView';
-import Welcome from './Welcome';
+import Login from '../../src/layouts/auth/login/Login';
 
-storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 
-storiesOf('Button', module)
-  .addDecorator(getStory => <CenterView>{getStory()}</CenterView>)
-  .add('with text', () => (
-    <Button onPress={action('clicked-text')}>
-      <Text>Hello Button</Text>
-    </Button>
-  ))
-  .add('with some emoji', () => (
-    <Button onPress={action('clicked-emoji')}>
-      <Text>😀 😎 👍 💯</Text>
-    </Button>
-  ));
+  storiesOf('Layout', module)
+  .addDecorator(withKnobs)
+  .add('Login', () => {
+      const opt = number("Option", 1)
+      const form = object("Form", {
+        email : "a@a.com",
+        emailPlaceholder : "Insert Email",
+        password : "Password",
+        passwordPlaceholder :"Insert Password"
+      })
+      const btnText = text("Button Text", "Login")
+      
+      
+      return(
+    <Login 
+      option={opt}
+      form={form}
+      btnText={btnText}
+    />
+  )});
+  

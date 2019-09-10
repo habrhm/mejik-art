@@ -8,7 +8,7 @@ const App = () => (
   <ApplicationProvider
     mapping={mapping}
     theme={lightTheme}>
-      <TestScreen/>
+      <StorybookUI/>
   </ApplicationProvider>
 );
 
