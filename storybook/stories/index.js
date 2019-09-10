@@ -7,30 +7,30 @@ import { linkTo } from '@storybook/addon-links';
 import { withKnobs, object, text, number } from '@storybook/addon-knobs';
 
 // eslint-disable-next-line import/extensions
-import Login from '../../src/layouts/auth/login/Login';
+import SignIn from '../../src/layouts/auth/SignIn';
 
 
   storiesOf('Layout', module)
   .addDecorator(withKnobs)
   .add('Login', () => {
-      const opt = number("Option", 1)
-      const form = object("Form", {
+      const option = number("option", 1)
+      const form = object("form", {
         email : "a@a.com",
         emailPlaceholder : "Insert Email",
         password : "Password",
         passwordPlaceholder :"Insert Password"
       })
-      const btnText = text("Button Text", "Login")
-      const bgUrl = text("Background Image", "https://melaniepfeffer.files.wordpress.com/2012/09/img_05461.jpg")
+      const btnText = text("btnText", "Login")
+      const bgUrl = text("bgUrl", "https://melaniepfeffer.files.wordpress.com/2012/09/img_05461.jpg")
       
       
       return(
-    <Login 
-      option={opt}
+    <SignIn 
+      option={option}
       bgUrl={bgUrl}
       form={form}
       btnText={btnText}
-      onPress={() => action("Login")}
+      onPressBtn={() => action("onPressBtn()")}
     />
   )});
   

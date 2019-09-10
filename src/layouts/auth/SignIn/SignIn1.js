@@ -17,7 +17,7 @@ class Login extends Component {
             form,
             validation,
             btnText,
-            onPress,
+            onPressBtn,
         } = this.props;
         const {
             emailPlaceholder,
@@ -25,15 +25,12 @@ class Login extends Component {
             email,
             password,
         } = form
-        return (
-
-     
+        return (     
             <Layout
                 style={{
                     flex: 1
                 }}
             >
-
                 <ImageBackground
                     resizeMode='stretch'
                     style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}
@@ -54,7 +51,7 @@ class Login extends Component {
                     />
                     </View>
                     <Button
-                        onPress={onPress()}
+                        onPress={onPressBtn()}
                         size="giant" style={{ width: '75%', position: 'absolute', bottom: 40 }}
                     >{btnText}
                     </Button>
